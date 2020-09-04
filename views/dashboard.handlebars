@@ -1,5 +1,5 @@
 <section>
-  <h2>Create New Post</h2>
+  <h2>Create New Blog Post</h2>
 
   <form class="new-post-form">
     <div>
@@ -7,21 +7,21 @@
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
+      <label for="post-url">Blog Post</label>
       <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
+    </div> 
+    <button type="submit" class="btn">Save</button>
   </form>
 </section>
 
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your Blog Posts</h2>
   <ol>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Blog Post</a>
     </li>
     {{/each}}
   </ol>

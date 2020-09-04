@@ -2,38 +2,57 @@
   box-sizing: border-box;
 }
 
-body, html {
+:root {
+  --main-color: #c8d6e5;
+  --button-color: #33d9b2;
+  --black: #1e272e;
+  --white: white;
+  --green: #218c74;
+  --blue: #5f27cd;
+}
+
+body {
   height: 100%;
   padding: 0;
   margin: 0;
+  background-color: var(--main-color);
   font-family: sans-serif;
-  color: #333;
+  color: var(--black);
+}
+
+header {
+  background-color: var(--green);
+  /* padding-bottom: 10%;
+  margin-right: 0%;
+  margin-left: 0%; */
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: var(--black);
   font-weight: bold;
-  transition: color .1s;
+  transition: color 0.1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: var(--white);
 }
 
 button {
-  background-color: #225ca3;
+  background-color: var(--button-color);
   border: 0;
   padding: 1%;
-  color: white;
+  color: var(--black);
   font-weight: bold;
-  transition: background-color .1s;
+  transition: background-color 0.1s;
   cursor: pointer;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: var(--green);
 }
 
 .post-list {
@@ -41,15 +60,17 @@ button:hover {
   padding: 0;
 }
 
-textarea, input {
-  padding: .5%;
+textarea,
+input {
+  padding: 0.5%;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--black);
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid var(--blue);
 }
 
 textarea {
@@ -75,7 +96,7 @@ form label {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--green);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,24 +118,26 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: var(--black);
   font-size: 100%;
   font-weight: bold;
-  transition: color .1s;
+  transition: color 0.1s;
   margin-left: 16px;
 }
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: var(--green);
 }
 
 .delete-post-btn {
-  background-color: #d41414;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .delete-post-btn:hover {
-  background-color: #ff643d;
+  background-color: var(--blue);
+  color: var(--white);
 }
 
 .post {
@@ -125,7 +148,7 @@ main {
 .post .title span {
   font-style: italic;
   font-size: 90%;
-  color: #7d7d7d;
+  color: var(--blue);
 }
 
 .edit-link {
@@ -134,12 +157,12 @@ main {
 }
 
 .upvote-btn {
-  background-color: #197d0f;
-  transition: background-color .1s;
+  background-color: var(--button-color);
+  transition: background-color 0.1s;
 }
 
 .upvote-btn:hover {
-  background-color: #1f9c13;
+  background-color: var(--button-color);
 }
 
 .comment-form {
@@ -152,13 +175,13 @@ main {
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: var(--main-color);
 }
 
 .comment .meta {
   font-size: 90%;
-  margin-bottom: .5%;
-  opacity: .6;
+  margin-bottom: 0.5%;
+  opacity: 0.6;
 }
 
 .new-post-form input {
@@ -170,7 +193,7 @@ main {
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--green);
   display: flex;
   justify-content: center;
   padding: 1%;
