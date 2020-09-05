@@ -8,7 +8,7 @@ router.get("/", withAuth, (req, res) => {
   console.log(req.session);
   Post.findAll({
     where: {
-      userId: req.session.userId,
+      id: req.session.userId,
     },
   })
     .then((dbPostData) => {
@@ -23,7 +23,7 @@ router.get("/", withAuth, (req, res) => {
 
 // get new post 
 router.get("/new", withAuth, (req, res) => {
-  res.render("new-posts", { layout: "dashboard" });
+  res.render("new-post", { layout: "dashboard" });
 });
 
 router.get("/edit/:id", withAuth, (req, res) => {
