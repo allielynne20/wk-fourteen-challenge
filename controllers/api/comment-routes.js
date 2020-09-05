@@ -11,8 +11,8 @@ const withAuth = require('../../utils/auth');
 //     });
 // });
 
+// post creates comment 
 router.post('/', withAuth, (req, res) => {
-  // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
   Comment.create({
     ...req.body, userId: req.session.userId
   })

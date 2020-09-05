@@ -77,8 +77,8 @@ const withAuth = require("../../utils/auth");
 //     });
 // });
 
+// post new post
 router.post("/", withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     ...req.body,
     userId: req.session.userId,
@@ -90,6 +90,7 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
+// put updates post
 router.put("/:id", withAuth, (req, res) => {
   // custom static method created in models/Post.js
   Post.update(req.body, {
@@ -134,6 +135,7 @@ router.put("/:id", withAuth, (req, res) => {
 //     });
 // });
 
+// delete post
 router.delete("/:id", withAuth, (req, res) => {
   console.log("id", req.params.id);
   Post.destroy({

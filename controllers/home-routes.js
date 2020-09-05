@@ -9,10 +9,8 @@ router.get("/", (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-
-      res.render("all-posts", {
-        posts,
-      });
+      //all-posts used to be homepage
+      res.render("all-posts", { posts });
     })
     .catch((err) => {
       console.log(err);
@@ -33,16 +31,11 @@ router.get("/post/:id", (req, res) => {
   })
     .then((dbPostData) => {
       if (dbPostData) {
-        const post = dbPostData.get({
-          plain: true,
-        });
-
-        res.render("single-posts", {
-          post,
-        });
-      }
-      else {
-        res.status(404).end()
+        const post = dbPostData.get({ plain: true });
+        //single-posts was single-post 
+        res.render("single-posts", { post });
+      } else {
+        res.status(404).end();
       }
     })
     .catch((err) => {
@@ -51,12 +44,13 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
+//get login for login page
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
-
+  //login stays login
   res.render("login");
 });
 
